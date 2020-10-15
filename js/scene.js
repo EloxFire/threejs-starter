@@ -7,18 +7,6 @@ Will never change in the beginning
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500);
 var renderer = new THREE.WebGLRenderer();
-
-var loader = new GLTFLoader();
-
-loader.load( '../imports/scene.gltf', function ( gltf ) {
-
-	scene.add( gltf.scene );
-
-}, undefined, function ( error ) {
-
-	console.error( error );
-
-} );
 // Setting scene background
 scene.background = new THREE.Color(0x121212);
 
@@ -62,7 +50,7 @@ function animate() {
 function rotate(){
   cube1.rotation.x += 0.05;
   cube2.rotation.y += 0.01;
-  cube3.position.z -= 0.01;
+  cube3.position.z -= 0.19;
   cube3.rotation.y += 0.02;
   // camera.rotation.y += 0.01;
 }
