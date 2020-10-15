@@ -8,6 +8,20 @@ var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500);
 var renderer = new THREE.WebGLRenderer();
 
+var loader = new GLTFLoader();
+
+loader.load( '../imports/scene.gltf', function ( gltf ) {
+
+	scene.add( gltf.scene );
+
+}, undefined, function ( error ) {
+
+	console.error( error );
+
+} );
+// Setting scene background
+scene.background = new THREE.Color(0x121212);
+
 // MeshBasicMaterial are for adding colors to objects
 var purpleMaterial = new THREE.MeshBasicMaterial({color: 0x9146FF});
 var greenMaterial = new THREE.MeshBasicMaterial({color: 0x86de58});
@@ -30,6 +44,7 @@ scene.add(cube1, cube2, cube3);
 // Setting camera position
 camera.position.set(0, 0, 5);
 camera.lookAt(0, 0, 0);
+camera.focus = 1;
 // Setting size on the screen (full screen here)
 renderer.setSize( window.innerWidth, window.innerHeight );
 // Adding scene to the DOM
@@ -47,8 +62,9 @@ function animate() {
 function rotate(){
   cube1.rotation.x += 0.05;
   cube2.rotation.y += 0.01;
-  cube3.rotation.x += 0.01;
+  cube3.position.z -= 0.01;
   cube3.rotation.y += 0.02;
+  // camera.rotation.y += 0.01;
 }
 
 
