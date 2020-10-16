@@ -84,5 +84,21 @@
   cube.rotate.z -= 0.02;
   ```
 
+#### 3 - Usefull things
+
+- Make canvas background transparent :
+
+  ```js
+  var renderer = new THREE.WebGLRenderer({aplha: true});
+  renderer.setClearColor(0x000000, 0);
+  ```
+
+- Set scene background to specific color :
+
+  ```js
+  var Scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x121212);
+  ```
+
   
 

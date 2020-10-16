@@ -7,6 +7,7 @@ This repository is here to store and serve as a memo-book to myself in my advent
 ### On this repo, you'll see :
 
 - My progression
+- My failures lol
 - The code that i'm playing with at the time
 - A note.md file where I store things like function names, objects names, and important code blocks to remember
 

@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Ubuntu;
+}
+
+.bg-image{
+  z-index: -10;
+  height: 100vh;
+  position: absolute !important;
+  filter: blur(4px);
+  background-image: url('../img/mall.jpg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.titleDiv{
+  color: #ffffff;
+  position: absolute;
+  z-index: 0;
+  height: 100vh;
+}
