@@ -5,22 +5,25 @@ var renderer = new THREE.WebGLRenderer(); //Renderer
 // Setting background color of scene
 scene.background = new THREE.Color(0x121212);
 
-// Addig a cube
-var cubeGeo = new THREE.BoxGeometry();
-var purpleMaterial = new THREE.MeshPhysicalMaterial({color: 0x9146FF});
-var cube = new THREE.Mesh(cubeGeo, purpleMaterial);
+var geometry = new THREE.TorusKnotBufferGeometry(0.8, 0.2, 64, 8);
+var material = new THREE.MeshToonMaterial( { color: 0xffff00 } );
+var torusKnot = new THREE.Mesh( geometry, material );
 
 
 // Adding a light source
-var light = new THREE.SpotLight( 0xffffff ); // soft white light
+var light = new THREE.SpotLight( 0xffffff, 1 ); // soft white light
+var light2 = new THREE.SpotLight( 0xffffff, 1 ); // soft white light
+
 // Positioning
-cube.position.set(0, 0, 0);
-light.position.set(1, -2, -5);
+torusKnot.position.set(0, 0, 0);
+light.position.set(4, 0, -1);
+light2.position.set(-4, 0, 1);
 camera.position.set(0, 0, -5);
 camera.lookAt(0, 0, 0);
 // Adding to scene
-scene.add(cube);
+scene.add( torusKnot );
 scene.add(light);
+// scene.add(light2);
 
 // Setting size on the screen (full screen here)
 renderer.setSize( window.innerWidth, 800 );
@@ -35,8 +38,8 @@ function animate() {
 }
 
 function rotate(){
-  cube.rotation.x -= 0.02;
-  cube.rotation.y -= 0.02;
+  torusKnot.rotation.y -= 0.02;
+  // innerScreen.rotation.y -= 0.02;
 }
 
 animate();
