@@ -5,8 +5,9 @@ Thoses are the basiscs elements of threejs
 Will never change in the beginning
 */
 var scene = new THREE.Scene();
+var threeScene = document.getElementById('canvas');
 var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500);
-var renderer = new THREE.WebGLRenderer();
+var renderer = new THREE.WebGLRenderer({canvas : threeScene});
 // Setting scene background
 scene.background = new THREE.Color(0x121212);
 
@@ -34,7 +35,8 @@ camera.position.set(0, 0, 5);
 camera.lookAt(0, 0, 0);
 camera.focus = 1;
 // Setting size on the screen (full screen here)
-renderer.setSize( window.innerWidth, window.innerHeight );
+// renderer.setSize( window.innerWidth, window.innerHeight );
+// renderer.setPixelRatio( window.devicePixelRatio );
 // Adding scene to the DOM
 document.body.appendChild( renderer.domElement );
 
