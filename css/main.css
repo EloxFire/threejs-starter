@@ -4,20 +4,26 @@
   font-family: Ubuntu;
 }
 
-.bg-image{
-  z-index: -10;
-  height: 800px;
-  position: absolute !important;
-  filter: blur(4px);
-  background-image: url('../img/mall.jpg');
+body{
+  height: 100vh;
+  background-image: url('../img/tv_empty.png'), linear-gradient(to right bottom, #9146ff, #9d63ef, #a67bde, #ac92cc, #b0a8b9);
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+
 .titleDiv{
-  color: #ffffff;
+  /* color: #ffffff; */
   position: absolute;
   z-index: 0;
   height: 800px;
+}
+
+.h-100{
+  height: 100vh !important;
+}
+
+.test{
+  position: absolute;
 }
